@@ -130,26 +130,3 @@ npm run dev
 * Image size normalization using CSS
 * Loader state to prevent duplicate form submissions
 * Secure environment variable handling
-
----
-
-## 🎯 Purpose of This Project
-
-* Portfolio project
-* Freelance‑ready restaurant website
-* Demonstrates real‑world MERN stack usage
-* Focus on clean architecture and production deployment
-
----
-
-## 👨‍💻 Author
-
-**Uttam Barve**
-3rd Year BTech IT Student
-Frontend‑focused Full Stack Developer (MERN)
-
----
-
-## ⭐ If you like this project
-
-Give it a ⭐ on GitHub — it motivates me to build more!
