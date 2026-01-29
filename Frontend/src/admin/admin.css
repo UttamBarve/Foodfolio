@@ -1,0 +1,287 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #0e0e0e;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 20px;
+  color: white;
+}
+
+.admin-login {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #0e0e0e;
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 380px;
+  background: #151515;
+  padding: 30px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-login-card h2 {
+  margin: 0;
+}
+
+.admin-login-card p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.admin-login-card input {
+  padding: 12px;
+  background: #0e0e0e;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 4px;
+}
+
+.admin-login-card button {
+  margin-top: 10px;
+  padding: 12px;
+  background: #f2c94c;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.admin-sidebar {
+  width: 240px;
+  background: #111;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.admin-logo {
+  color: #f2c94c;
+  font-size: 22px;
+}
+
+.admin-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-sidebar a {
+  color: #bbb;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.admin-sidebar a.active {
+  background: #1f1f1f;
+  color: #f2c94c;
+}
+
+.admin-topbar {
+  height: 60px;
+  background: #151515;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.admin-topbar button {
+  background: #f2c94c;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.admin-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.admin-card {
+  background: #151515;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.admin-card h3 {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.admin-card p {
+  font-size: 28px;
+  margin-top: 10px;
+  color: #f2c94c;
+}
+
+
+
+/* =========================
+   MENU TABLE
+========================= */
+
+.admin-table-wrapper {
+  margin-top: 20px;
+  background: #151515;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 14px;
+  border-bottom: 1px solid #222;
+  text-align: left;
+}
+
+.admin-table th {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.admin-table td {
+  font-size: 14px;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit {
+  background: transparent;
+  color: #f2c94c;
+  border: 1px solid #f2c94c;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-delete {
+  background: transparent;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-add {
+  margin-top: 20px;
+  padding: 10px 16px;
+  background: #f2c94c;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #151515;
+  padding: 25px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal h2 {
+  margin-bottom: 10px;
+}
+
+.modal input {
+  padding: 10px;
+  background: #0e0e0e;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 4px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+
+/* =========================
+   RESERVATION STATUS
+========================= */
+
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status.pending {
+  background: rgba(242, 201, 76, 0.15);
+  color: #f2c94c;
+}
+
+.status.confirmed {
+  background: rgba(39, 174, 96, 0.15);
+  color: #27ae60;
+}
+
+.status.cancelled {
+  background: rgba(231, 76, 60, 0.15);
+  color: #e74c3c; 
+}
+
+.txt{
+  color: white;
+}
+
+/* =========================
+   HERO ADMIN
+========================= */
+
+.hero-preview {
+  width: 120px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
