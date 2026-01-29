@@ -8,12 +8,14 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "http://localhost:5173", // local frontend
-      "https://foodfolio-uttambarve.vercel.app/", // will update later
+      "http://localhost:5173",
+      "https://foodfolio-uttambarve.vercel.app"
     ],
-    credentials: true,
-  }),
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
 );
+
 app.use(express.json());
 
 app.use("/api/admin", require("./routes/adminRoutes"));
