@@ -9,7 +9,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173", // local frontend
-      "https://your-frontend.vercel.app", // will update later
+      "https://foodfolio-uttambarve.vercel.app/", // will update later
     ],
     credentials: true,
   }),
