@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { apiRequest } from "../../services/api"; // adjust path if needed
 
 const Login = () => {
@@ -7,6 +7,10 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    document.title = "Admin login | Foodfolio";
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

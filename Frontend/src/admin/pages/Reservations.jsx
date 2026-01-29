@@ -8,14 +8,13 @@ const Reservations = () => {
   const token = localStorage.getItem("admin-token");
 
   useEffect(() => {
+    document.title = "Admin | Foodfolio";
+  }, []);
+
+  useEffect(() => {
     const fetchReservations = async () => {
       try {
-        const data = await apiRequest(
-          "/api/reservations",
-          "GET",
-          null,
-          token
-        );
+        const data = await apiRequest("/api/reservations", "GET", null, token);
         setReservations(data);
       } catch (err) {
         console.error("Failed to fetch reservations", err);
@@ -29,17 +28,10 @@ const Reservations = () => {
 
   const updateStatus = async (id, status) => {
     try {
-      await apiRequest(
-        `/api/reservations/${id}`,
-        "PUT",
-        { status },
-        token
-      );
+      await apiRequest(`/api/reservations/${id}`, "PUT", { status }, token);
 
       setReservations((prev) =>
-        prev.map((r) =>
-          r._id === id ? { ...r, status } : r
-        )
+        prev.map((r) => (r._id === id ? { ...r, status } : r)),
       );
     } catch (err) {
       alert("Failed to update status");
@@ -88,13 +80,17 @@ const Reservations = () => {
                     <select
                       className={`status ${r.status}`}
                       value={r.status}
-                      onChange={(e) =>
-                        updateStatus(r._id, e.target.value)
-                      }
+                      onChange={(e) => updateStatus(r._id, e.target.value)}
                     >
-                      <option class='back' value="pending">Pending</option>
-                      <option class='back' value="confirmed">Confirmed</option>
-                      <option class='back' value="cancelled">Cancelled</option>
+                      <option class="back" value="pending">
+                        Pending
+                      </option>
+                      <option class="back" value="confirmed">
+                        Confirmed
+                      </option>
+                      <option class="back" value="cancelled">
+                        Cancelled
+                      </option>
                     </select>
                   </td>
                 </tr>

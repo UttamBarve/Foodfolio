@@ -16,16 +16,15 @@ const Hero = () => {
 
   const token = localStorage.getItem("admin-token");
 
+  useEffect(() => {
+    document.title = "Admin | Foodfolio";
+  }, []);
+
   // 🔹 Fetch hero slides (admin)
   useEffect(() => {
     const fetchSlides = async () => {
       try {
-        const data = await apiRequest(
-          "/api/hero/admin",
-          "GET",
-          null,
-          token
-        );
+        const data = await apiRequest("/api/hero/admin", "GET", null, token);
         setSlides(data);
       } catch (err) {
         console.error("Failed to fetch hero slides", err);
@@ -89,21 +88,14 @@ const Hero = () => {
           `/api/hero/${editingSlide._id}`,
           "PUT",
           data,
-          token
+          token,
         );
 
         setSlides((prev) =>
-          prev.map((s) =>
-            s._id === editingSlide._id ? updated : s
-          )
+          prev.map((s) => (s._id === editingSlide._id ? updated : s)),
         );
       } else {
-        const created = await apiRequest(
-          "/api/hero",
-          "POST",
-          data,
-          token
-        );
+        const created = await apiRequest("/api/hero", "POST", data, token);
 
         setSlides((prev) => [...prev, created]);
       }
@@ -121,12 +113,7 @@ const Hero = () => {
     if (!window.confirm("Delete this hero slide?")) return;
 
     try {
-      await apiRequest(
-        `/api/hero/${id}`,
-        "DELETE",
-        null,
-        token
-      );
+      await apiRequest(`/api/hero/${id}`, "DELETE", null, token);
       setSlides((prev) => prev.filter((s) => s._id !== id));
     } catch {
       alert("Failed to delete hero slide");

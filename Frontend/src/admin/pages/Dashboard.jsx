@@ -10,6 +10,10 @@ const Dashboard = () => {
   const token = localStorage.getItem("admin-token");
 
   useEffect(() => {
+    document.title = "Admin | Foodfolio";
+  }, []);
+
+  useEffect(() => {
     const fetchDashboardData = async () => {
       try {
         const [menu, reservations, hero] = await Promise.all([

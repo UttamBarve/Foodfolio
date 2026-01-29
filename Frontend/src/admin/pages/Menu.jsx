@@ -17,6 +17,10 @@ const Menu = () => {
 
   const token = localStorage.getItem("admin-token");
 
+  useEffect(() => {
+    document.title = "Admin | Foodfolio";
+  }, []);
+
   // 🔹 Fetch menu items
   useEffect(() => {
     const fetchMenu = async () => {
@@ -62,11 +66,7 @@ const Menu = () => {
 
     setFormData((prev) => ({
       ...prev,
-      [name]: files
-        ? files[0]
-        : name === "isActive"
-        ? value === "true"
-        : value,
+      [name]: files ? files[0] : name === "isActive" ? value === "true" : value,
     }));
   };
 
@@ -92,21 +92,14 @@ const Menu = () => {
           `/api/menu/${editingItem._id}`,
           "PUT",
           data,
-          token
+          token,
         );
 
         setMenu((prev) =>
-          prev.map((m) =>
-            m._id === editingItem._id ? updated : m
-          )
+          prev.map((m) => (m._id === editingItem._id ? updated : m)),
         );
       } else {
-        const created = await apiRequest(
-          "/api/menu",
-          "POST",
-          data,
-          token
-        );
+        const created = await apiRequest("/api/menu", "POST", data, token);
 
         setMenu((prev) => [...prev, created]);
       }
