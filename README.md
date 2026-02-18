@@ -102,7 +102,7 @@ VITE_API_URL=https://foodfolio-dzla.onrender.com
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/foodfolio.git
+git clone https://github.com/uttambarve/foodfolio.git
 ```
 
 ### 2️⃣ Backend Setup
